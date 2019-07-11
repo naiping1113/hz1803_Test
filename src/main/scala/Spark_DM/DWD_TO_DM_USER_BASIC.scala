@@ -1,11 +1,11 @@
-package Spark_DW
+package Spark_DM
 
 import SparkConfig.ConfigManager
 import SparkUtils.JDBCUtils
 import org.apache.spark.sql.{SaveMode, SparkSession}
 import org.slf4j.LoggerFactory
 
-object DWD_TO_DWS {
+object DWD_TO_DM_USER_BASIC {
   def main(args: Array[String]): Unit = {
     val conf = SparkSession
       .builder()

@@ -9,7 +9,7 @@ object ConfigManager {
     val in_dws = ConfigManager
       .getClass
       .getClassLoader
-      .getResourceAsStream("dwd_to_dws.properties")
+      .getResourceAsStream("dwd_to_dm_user_basic.properties")
     val in_basic = ConfigManager
       .getClass
       .getClassLoader
