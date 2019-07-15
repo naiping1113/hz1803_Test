@@ -5,7 +5,7 @@ import SparkUtils.JDBCUtils
 import org.apache.spark.sql.{SaveMode, SparkSession}
 import org.slf4j.LoggerFactory
 
-object DWD_TO_DM_USER_BASIC {
+object DM_USER_BASIC {
   def main(args: Array[String]): Unit = {
     System.setProperty("HADOOP_USER_NAME","root")
     val conf = SparkSession
@@ -27,7 +27,6 @@ object DWD_TO_DM_USER_BASIC {
       val jdbcUrl = JDBCUtils.getjdbcProp()._2
 
       df.write.mode(SaveMode.Append).jdbc(jdbcUrl,mysqlTableName,jdbcProp)
-      //df.write.mode(SaveMode.Append).insertInto(hiveTableName)
     }
   }
 }

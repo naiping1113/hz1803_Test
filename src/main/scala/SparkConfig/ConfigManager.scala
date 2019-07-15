@@ -6,15 +6,15 @@ object ConfigManager {
   private val prop = new Properties()
   // 通过类加载器方法来加载指定的配置文件
   try{
-    val in_dws = ConfigManager
+    val in_dm = ConfigManager
       .getClass
       .getClassLoader
-      .getResourceAsStream("dwd_to_dm_user_basic.properties")
+      .getResourceAsStream("dm.properties")
     val in_basic = ConfigManager
       .getClass
       .getClassLoader
       .getResourceAsStream("basic.properties")
-    prop.load(in_dws)
+    prop.load(in_dm)
     prop.load(in_basic)
   }catch {
     case e:Exception=>e.printStackTrace()
