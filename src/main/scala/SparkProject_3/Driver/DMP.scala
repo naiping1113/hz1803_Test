@@ -114,8 +114,8 @@ object DMP {
       StringUtil.String2Int(arr(84)))
     }))
 
-    //创建临时表
     val jdbcProp = JDBCUtils.getjdbcProp()._1
+    //创建临时表
     df.createTempView("dmp")
 
     /**
@@ -131,7 +131,6 @@ object DMP {
 //    val sql = ConfigManager.getProper("equipment")
     //操作系统
     //val sql = ConfigManager.getProper("browser")
-
     //sparksql.sql(sql).show()
 
     /**
@@ -144,9 +143,8 @@ object DMP {
     /**
       * 每个省份城市的分布率
       */
-    //val citycount = sparksql.sql("select provincename,cityname,count(*) as counts from dmp group by provincename,cityname")
-    //citycount.write.mode(SaveMode.Overwrite).jdbc("jdbc:mysql://localhost:3306/qfbap","citycounts",jdbcProp)
-    //citycount.write.partitionBy("provincename","cityname")
+    val citycount = sparksql.sql("select provincename,cityname,count(*) as counts from dmp group by provincename,cityname")
+    citycount.write.mode(SaveMode.Overwrite).jdbc("jdbc:mysql://localhost:3306/qfbap","citycounts",jdbcProp)
     sparksql.stop()
   }
 }

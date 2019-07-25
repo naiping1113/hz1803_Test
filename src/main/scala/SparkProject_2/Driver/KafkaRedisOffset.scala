@@ -86,6 +86,7 @@ object KafkaRedisOffset {
         val value = rdd.map(_.value())
         //value.foreach(println)
         utils.getJsonValues(value,broad)
+
         // 将偏移量进行更新
         val jedis = JedisConnectionPool.getConnection()
         for (or<-offestRange){

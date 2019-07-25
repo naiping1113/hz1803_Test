@@ -7,6 +7,7 @@ import org.apache.spark.rdd.RDD
   * Utils
   */
 object RedisAPP {
+
   //总订单量、成功总金额、成功量、充值花费总时长
   def Result01(result01:RDD[(String,List[Double])]){
     result01.foreachPartition(f=>{
@@ -20,6 +21,7 @@ object RedisAPP {
       jedis.close()
     })
   }
+
   //每分钟订单量
   def Result02(result02:RDD[(String,Double)]){
     result02.foreachPartition(f=>{
@@ -30,6 +32,7 @@ object RedisAPP {
       jedis.close()
     })
   }
+
   //每小时各省份充值失败数据量
   def Result03(result03: RDD[((String, String), Int)]): Unit ={
     result03.foreachPartition(f=>{
@@ -42,6 +45,7 @@ object RedisAPP {
       JDBCConnectPoolUtils.resultConn(jdbcconn)
     })
   }
+
   //各省订单量top10、成功率
   def Result04(result04: RDD[(String, Double, String)]): Unit = {
     result04.foreachPartition(f=>{
