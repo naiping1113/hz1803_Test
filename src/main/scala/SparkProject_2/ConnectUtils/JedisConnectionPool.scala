@@ -1,4 +1,4 @@
-package SparkStreamingProject
+package SparkProject_2.ConnectUtils
 
 import redis.clients.jedis.{Jedis, JedisPool, JedisPoolConfig}
 

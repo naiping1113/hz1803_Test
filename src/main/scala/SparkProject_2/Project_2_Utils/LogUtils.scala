@@ -1,6 +1,6 @@
-package SparkUtils
+package SparkProject_2.Project_2_Utils
 
-import SparkStreamingProject.RedisAPP
+import SparkProject_2.Project_2_Utils
 import com.alibaba.fastjson.JSON
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
@@ -19,8 +19,8 @@ class LogUtils extends Serializable {
         //充值结束时间
         val stoptime = t.getString("receiveNotifyTime")
         //转换为时间戳
-        val begin = SparkUtils.TimeUtils.tranTimeToLong(starttime.substring(0,17))
-        val after = SparkUtils.TimeUtils.tranTimeToLong(stoptime)
+        val begin = TimeUtils.tranTimeToLong(starttime.substring(0,17))
+        val after = Project_2_Utils.TimeUtils.tranTimeToLong(stoptime)
         val days = starttime.substring(0,8)
         val hours = starttime.substring(0,10)
         val minis = starttime.substring(0,12)

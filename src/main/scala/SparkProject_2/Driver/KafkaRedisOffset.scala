@@ -1,8 +1,9 @@
-package SparkStreamingProject
+package SparkProject_2.Driver
 
 import java.lang
 
-import SparkUtils.LogUtils
+import SparkProject_2.ConnectUtils.{JedisConnectionPool, JedisOffset}
+import SparkProject_2.Project_2_Utils.LogUtils
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.TopicPartition
 import org.apache.kafka.common.serialization.StringDeserializer

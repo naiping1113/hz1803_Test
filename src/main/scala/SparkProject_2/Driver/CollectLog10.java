@@ -1,4 +1,4 @@
-package SparkStreamingProject;
+package SparkProject_2.Driver;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;

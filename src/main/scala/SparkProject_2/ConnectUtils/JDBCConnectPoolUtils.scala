@@ -1,4 +1,4 @@
-package SparkStreamingProject
+package SparkProject_2.ConnectUtils
 
 import java.sql.{Connection, DriverManager}
 import java.util

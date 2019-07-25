@@ -1,5 +1,6 @@
-package SparkStreamingProject
+package SparkProject_2.Project_2_Utils
 
+import SparkProject_2.ConnectUtils.{JDBCConnectPoolUtils, JedisConnectionPool}
 import org.apache.spark.rdd.RDD
 
 /**
